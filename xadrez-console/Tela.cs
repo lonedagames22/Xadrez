@@ -15,8 +15,10 @@ namespace xadrez_console
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (tab.ObterPeca(i, j) == null) Console.Write("- ");
-                    else Console.Write(tab.ObterPeca(i, j) + " ");
+                    if (tab.ObterPeca(i, j) == null) 
+                        Console.Write("- ");
+                    else 
+                        Console.Write(tab.ObterPeca(i, j) + " ");
                 }
                 Console.WriteLine();
             }
