@@ -5,7 +5,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tabuleiro
+namespace Jogo.Tabuleiro
 {
     internal class Posicao
     {

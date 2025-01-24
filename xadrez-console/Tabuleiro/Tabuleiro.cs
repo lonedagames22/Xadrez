@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tabuleiro
+namespace Jogo.Tabuleiro
 {
     internal class Tabuleiro
     {
@@ -17,6 +17,11 @@ namespace Tabuleiro
             Linhas = linhas;
             Colunas = colunas;
             _pecas = new Peca[linhas, colunas];
+        }
+
+        public Peca ObterPeca(int linha, int coluna) //retorna a posicao de uma peca no tabuleiro
+        { 
+            return _pecas[linha, coluna];
         }
     }
 }

@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tabuleiro
+namespace Jogo.Tabuleiro
 {
     enum Cor
     {
         Branca,
         Preta,
-        //não serão usadas 
-        Amarela,
-        Azul,
-        Vermelha
+        Amarela, //nao sera usada
+        Azul, //nao sera usada
+        Vermelha //nao sera usada
     }
 }
