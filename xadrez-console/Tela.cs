@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Jogo.Tabuleiro;
+using Xadrez;
 
 namespace xadrez_console
 {
@@ -27,6 +28,14 @@ namespace xadrez_console
                 Console.WriteLine();
             }
             Console.WriteLine("  a b c d e f g h");
+        }
+
+        public static PosicaoXadrez LerPosicaoXadrez() 
+        { 
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1] + "");
+            return new PosicaoXadrez(coluna, linha);
         }
 
         public static void ImprimirPeca(Peca peca)

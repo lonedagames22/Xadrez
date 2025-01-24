@@ -19,5 +19,9 @@ namespace Jogo.Tabuleiro
             Tab = tab;
         }
 
+        public void IncrementarQteDeMovimentos() 
+        {
+            QteDeMovimentos++;
+        }
     }
 }

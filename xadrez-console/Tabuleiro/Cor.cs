@@ -8,10 +8,10 @@ namespace Jogo.Tabuleiro
 {
     enum Cor
     {
-        Branca,
-        Preta,
+        Branca, //nao sera usada 
+        Preta, //nao sera usada
         Amarela, //nao sera usada
-        Azul, //nao sera usada
-        Vermelha //nao sera usada
+        Azul, 
+        Vermelha
     }
 }
