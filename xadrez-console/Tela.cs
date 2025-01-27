@@ -25,6 +25,8 @@ namespace xadrez_console
                 Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(partida.JogadorAtual);
             Console.ForegroundColor = aux;
+            if(partida.Xeque)
+                Console.WriteLine("XEQUE!");
         }
 
         public static void ImprimirPecasCapturadas(PartidaDeXadrez partida)
