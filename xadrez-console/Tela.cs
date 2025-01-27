@@ -57,22 +57,18 @@ namespace xadrez_console
 
         public static void ImprimirPeca(Peca peca)
         {
-
             if (peca == null)
                 Console.Write("- ");
             else
             {
                 ConsoleColor aux = Console.ForegroundColor;
+                
                 if (peca.Cor == Cor.Vermelha)
-                {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write(peca);
-                }
                 else if (peca.Cor == Cor.Azul)
-                {
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.Write(peca);
-                }
+                
+                Console.Write(peca);
                 Console.ForegroundColor = aux;
                 Console.Write(" ");
             }
