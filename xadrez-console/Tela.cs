@@ -17,29 +17,44 @@ namespace xadrez_console
             ImprimirPecasCapturadas(partida);
             Console.WriteLine();
             Console.WriteLine("Turno: " + partida.Turno);
-            ConsoleColor aux = Console.ForegroundColor;
-            Console.Write("Aguardando jogada: ");
-            if (partida.JogadorAtual == Cor.Azul)
-                Console.ForegroundColor = ConsoleColor.Blue;
-            else
-                Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(partida.JogadorAtual);
-            Console.ForegroundColor = aux;
-            if(partida.Xeque)
-                Console.WriteLine("XEQUE!");
+            if (!partida.PartidaTerminada)
+            {
+                ConsoleColor aux = Console.ForegroundColor;
+                Console.Write("Aguardando jogada: ");
+                if (partida.JogadorAtual == Cor.Azul)
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                else
+                    Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(partida.JogadorAtual);
+                Console.ForegroundColor = aux;
+                if (partida.Xeque)
+                    Console.WriteLine("XEQUE!");
+            }
+            else 
+            {
+                Console.WriteLine("XEQUEMATE!");
+                Console.Write("Vencedor: ");
+                ConsoleColor aux = Console.ForegroundColor;
+                if (partida.JogadorAtual == Cor.Azul)
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                else
+                    Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(partida.JogadorAtual);
+                Console.ForegroundColor = aux;
+            }
         }
 
         public static void ImprimirPecasCapturadas(PartidaDeXadrez partida)
         {
             Console.WriteLine("Peças capturadas: ");
             ConsoleColor aux = Console.ForegroundColor;
-           
+
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write("Azuis: ");
             Console.ForegroundColor = aux;
             ImprimirConjunto(partida.PecasCapturadas(Cor.Azul));
             Console.WriteLine();
-            
+
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("Vermelhas: ");
             Console.ForegroundColor = aux;
