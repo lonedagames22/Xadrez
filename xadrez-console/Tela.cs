@@ -10,6 +10,51 @@ namespace xadrez_console
 {
     internal class Tela
     {
+        public static void ImprimirPartida(PartidaDeXadrez partida)
+        {
+            ImprimirTabuleiro(partida.Tab);
+            Console.WriteLine();
+            ImprimirPecasCapturadas(partida);
+            Console.WriteLine();
+            Console.WriteLine("Turno: " + partida.Turno);
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.Write("Aguardando jogada: ");
+            if (partida.JogadorAtual == Cor.Azul)
+                Console.ForegroundColor = ConsoleColor.Blue;
+            else
+                Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(partida.JogadorAtual);
+            Console.ForegroundColor = aux;
+        }
+
+        public static void ImprimirPecasCapturadas(PartidaDeXadrez partida)
+        {
+            Console.WriteLine("Peças capturadas: ");
+            ConsoleColor aux = Console.ForegroundColor;
+           
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write("Azuis: ");
+            Console.ForegroundColor = aux;
+            ImprimirConjunto(partida.PecasCapturadas(Cor.Azul));
+            Console.WriteLine();
+            
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("Vermelhas: ");
+            Console.ForegroundColor = aux;
+            ImprimirConjunto(partida.PecasCapturadas(Cor.Vermelha));
+            Console.WriteLine();
+        }
+
+        public static void ImprimirConjunto(HashSet<Peca> conjunto)
+        {
+            Console.Write("[");
+            foreach (Peca p in conjunto)
+            {
+                Console.Write(p + " ");
+            }
+            Console.Write("]");
+        }
+
         public static void ImprimirTabuleiro(Tabuleiro tab)
         {
             for (int i = 0; i < 8; i++)
@@ -62,12 +107,12 @@ namespace xadrez_console
             else
             {
                 ConsoleColor aux = Console.ForegroundColor;
-                
+
                 if (peca.Cor == Cor.Vermelha)
                     Console.ForegroundColor = ConsoleColor.Red;
                 else if (peca.Cor == Cor.Azul)
                     Console.ForegroundColor = ConsoleColor.Blue;
-                
+
                 Console.Write(peca);
                 Console.ForegroundColor = aux;
                 Console.Write(" ");
